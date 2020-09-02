@@ -1,0 +1,139 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "3baca06b-3017-4731-b88a-91b2c975f614": {
+        "id": "3baca06b-3017-4731-b88a-91b2c975f614",
+        "parent": null,
+        "name": "SMSGateway",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "c64404a5-8b9c-48d2-976b-b9dfea57cd4a"
+        ],
+        "isRemovable": false,
+        "filePath": "SMSGateway"
+      },
+      "c64404a5-8b9c-48d2-976b-b9dfea57cd4a": {
+        "id": "c64404a5-8b9c-48d2-976b-b9dfea57cd4a",
+        "parent": "3baca06b-3017-4731-b88a-91b2c975f614",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "SMSGateway/lambda.js",
+        "triggers": [
+          {
+            "resourceName": "apigSMSGatewaysendSMSpost",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "cursor": {
+          "lineNumber": 1,
+          "column": 1
+        },
+        "lastUpdated": 1599039260883
+      }
+    },
+    "openFiles": [
+      "c64404a5-8b9c-48d2-976b-b9dfea57cd4a"
+    ],
+    "currentFileId": "c64404a5-8b9c-48d2-976b-b9dfea57cd4a",
+    "resources": {
+      "snsDirectSMSResource": {
+        "name": "snsDirectSMSResource",
+        "type": "SNS",
+        "config": {
+          "snsType": 1,
+          "numbers": [
+            "@{receiver}"
+          ]
+        },
+        "globallyEditable": false
+      },
+      "apigSMSGatewaysendSMSpost": {
+        "name": "apigSMSGatewaysendSMSpost",
+        "type": "API_GATEWAY",
+        "config": {
+          "apiMode": 0,
+          "apiName": "SMSGateway",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "sendSMS",
+          "resourcePath": "/sendSMS",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "prod"
+        },
+        "globallyEditable": true
+      },
+      "snsTestSNS": {
+        "name": "snsTestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "snsType": 0,
+          "subscriptions": []
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": "CloudFormation",
+      "definitions": null,
+      "syntax": "JSON"
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "editable": false,
+        "shouldPersist": false,
+        "displayOnly": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "nodejs",
+          "version": "2.644.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    },
+    "rootNode": "3baca06b-3017-4731-b88a-91b2c975f614",
+    "lambdaId": "c64404a5-8b9c-48d2-976b-b9dfea57cd4a",
+    "additionalFiles": []
+  },
+  "PROJECT_META": {
+    "sigmaVersion": "1.4.2",
+    "projectName": "SMSGateway",
+    "projectDescription": "A simple serverless SMS Gateway with AWS API Gateway and SNS",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "language": "nodejs",
+    "platformRegions": {},
+    "lastSave": 1599039790200
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "ServerlessSMSGateway-sigma-1599039805624",
+      "url": "https://github.com/HirudineeADRT/ServerlessSMSGateway-sigma-1599039805624"
+    }
+  }
+}
